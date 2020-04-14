@@ -1,0 +1,36 @@
+h2{padding-top:35px;}
+h3{padding-top:20px;}
+h4{padding-top:20px;}
+
+.enshu{
+    border: thin solid black
+    margin: 5px;
+}
+.enshu-title{
+    font-size: 25px;
+    padding: 5px;
+    background-color: blue;
+    color: white;
+}
+.enshu-title-next{
+    font-size: 25px;
+    padding: 5px;
+    background-color: green;
+    color: white;
+}
+.enshuQ{
+     font-size: 12px;
+     color: green;
+     padding: 5px;
+}
+.enshuA{
+     font-size: 12px;
+     padding: 5px;
+     margin:5px;
+     border: thin solid red;
+}
+.enshuATitle{
+     font-size: 12px;
+     padding: 5px;
+     color: red;
+}

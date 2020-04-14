@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+<!-- load anything -->
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+
+<!-- Add extra header -->
+{% block extra_head %}
+{% endblock %}
+
+<!-- Title header -->
+{% block head_title %}Error:404 | ScproTech{% endblock %}
+
+<!-- Banner content -->
+{% block banner-content %}
+  <h2 class="title">Not Found Page : error 404</h2>
+  <p >You cannot access this page.</p>
+{% endblock %}
+
+<!-- Main content -->
+{% block content %}
+  {% get_providers as socialaccount_providers %}
+
+<h2 class="ta-center">This page is not found.</h2>
+<h4 class="ta-center"><a href="{% url 'scprotech:home' %}">Go to home</a></h4>
+
+{% endblock %}
+
+<!-- Add extra script -->
+{% block extra_script %}
+{% endblock %}

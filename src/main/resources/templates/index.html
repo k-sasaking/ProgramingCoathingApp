@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Theme Region">
+   	<meta name="description" content="">
+
+    <title>Programing Coaching | index Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/icofont.css"> 
+    <link rel="stylesheet" href="css/slidr.css">     
+    <link rel="stylesheet" href="css/main.css">  
+	<link id="preset" rel="stylesheet" href="css/presets/preset1.css">	
+    <link rel="stylesheet" href="css/responsive.css">
+	
+	<!-- font -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Signika+Negative:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<!-- icons -->
+	<link rel="icon" href="images/ico/favicon.ico">	
+    <link rel="apple-touch-icon" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <!-- icons -->
+
+  </head>
+  <body>
+	<!-- header -->
+	<header id="header" class="clearfix">
+		<!-- navbar -->
+		<nav class="navbar navbar-default navbar-expand-lg">
+			<div class="container">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa fa-align-justify"></i></span>
+                </button>
+				<a class="navbar-brand" href="index.html"><img class="img-fluid" src="images/logo/pcm-logo.png" alt="Logo"></a>
+				
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/">Home</a></li>
+					</ul>
+				</div>
+				
+				<!-- nav-right -->
+				<div class="nav-right">				
+					<ul class="sign-in">
+						<li><i class="fa fa-user"></i></li>
+						<li><a href="/signin">Sign In</a></li>
+						<li><a href="/signup">Sign Up</a></li>
+					</ul><!-- sign-in -->					
+
+					<a href="/post" class="btn">Post Your Session</a>
+				</div>
+				<!-- nav-right -->
+			</div><!-- container -->
+		</nav><!-- navbar -->
+	</header><!-- header -->
+
+	<div class="banner-job">
+		<div class="banner-overlay"></div>
+		<div class="container text-center">
+			<h1 class="title">Find your Programing Coaching</h1>
+			<h3>We have about 1000 coaches</h3>
+			<div class="banner-form">
+				<form action="#" class="clearfix">
+					<input type="text" class="form-control" placeholder="Type your key word">
+					<div class="dropdown category-dropdown">						
+						<a data-toggle="dropdown" href="#"><span class="change-text">Language</span> <i class="fa fa-angle-down"></i></a>
+						<ul class="dropdown-menu category-change">
+							<li><a href="#">HTML/CSS</a></li>
+							<li><a href="#">javascript</a></li>
+							<li><a href="#">Java</a></li>
+							<li><a href="#">Python</a></li>
+							<li><a href="#">AI/Machine Learning</a></li>
+							<li><a href="#">Ruby</a></li>
+							<li><a href="#">PHP</a></li>
+							<li><a href="#">Swift</a></li>
+							<li><a href="#">Kotlin</a></li>
+							<li><a href="#">Go</a></li>
+							<li><a href="#">C#</a></li>
+							<li><a href="#">Scala</a></li>
+						</ul>								
+					</div><!-- category-change -->
+					<button type="submit" class="btn btn-primary" value="Search">Search</button>
+				</form>
+			</div><!-- banner-form -->
+			
+		</div><!-- container -->
+	</div><!-- banner-section -->
+
+	<div class="page">
+		<div class="container">
+		
+			<div class="section category-items job-category-items  text-center">
+				<ul class="category-list">	
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/html-css-logo.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">HTML/CSS</span>
+							<span class="category-quantity">(329)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/js-logo.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">javascript</span>
+							<span class="category-quantity">(412)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/java-logo-a.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">Java</span>
+							<span class="category-quantity">(252)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/python-logo-a.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">Python</span>
+							<span class="category-quantity">(212)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/ai-logo.jpg" alt="images" class="img-fluid"></div>
+							<span class="category-title">AI</span>
+							<span class="category-quantity">(62)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/ruby-logo-b.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">Ruby</span>
+							<span class="category-quantity">(312)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/php-logo-a.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">PHP</span>
+							<span class="category-quantity">(298)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/swift-logo-a.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">Swift</span>
+							<span class="category-quantity">(212)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/kotlin-logo-c.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">Kotlin</span>
+							<span class="category-quantity">(122)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/go-logo-a.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">Go</span>
+							<span class="category-quantity">(98)</span>
+						</a>
+					</li><!-- category-item -->
+					
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/c-logo.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">C#</span>
+							<span class="category-quantity">(78)</span>
+						</a>
+					</li><!-- category-item -->
+
+					<li class="category-item">
+						<a href="#">
+							<div class="category-icon"><img src="images/logo/programing/scala-logo-a.png" alt="images" class="img-fluid"></div>
+							<span class="category-title">Scala</span>
+							<span class="category-quantity">(58)</span>
+						</a>
+					</li><!-- category-item -->
+				</ul>				
+			</div><!-- category ad -->			
+
+			<div class="section latest-jobs-ads">
+				<div class="section-title tab-manu">
+					<h4>List Sessions</h4>
+					 <!-- Nav tabs -->      
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation"><a class="active" href="#popular-coaches" data-toggle="tab">Popular</a></li>
+						<li role="presentation"><a href="#recent-coaches" data-toggle="tab">Recent</a></li>
+						<li role="presentation"><a href="#cheap-coaches" data-toggle="tab">Cheap</a></li>
+					</ul>
+				</div>
+
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in" id="hot-jobs">
+					
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class=title>javascript</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java,Springboot</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Java Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java,Springboot</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+					
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Python Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Python, Django</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Ruby on Rails Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Ruby, Rails</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->
+					</div><!-- tab-pane -->
+
+					<div role="tabpanel" class="tab-pane fade in" id="recent-jobs">
+					
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class=title>javascript</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java,Springboot</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Java Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java,Springboot</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+					
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Python Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Python, Django</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Ruby on Rails Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Ruby, Rails</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->
+					</div><!-- tab-pane -->
+
+					<div role="tabpanel" class="tab-pane fade in active show" id="popular-jobs">
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class=title>javascript</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java,Springboot</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Java Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java,Springboot</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+					
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Python Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Python, Django</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->	
+
+						<div class="job-ad-item">
+							<div class="item-info">
+								<div class="item-image-box">
+									<div class="item-image">
+										<a href="job-details.html"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
+									</div><!-- item-image -->
+								</div>
+
+								<div class="ad-info">
+									<span><a href="job-details.html" class="title">Ruby on Rails Coaching</a> @ <a href="#">Kazuya Sasaki</a></span>
+									<div class="ad-meta">
+										<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Ruby, Rails</a></li>
+										</ul>
+									</div><!-- ad-meta -->									
+								</div><!-- ad-info -->
+								<div class="button">
+									<a href="#" class="btn btn-primary">Apply Now</a>
+								</div>
+							</div><!-- item-info -->
+						</div><!-- ad-item -->
+					</div><!-- tab-pane -->
+				</div><!-- tab-content -->
+			</div><!-- trending ads -->		
+
+			<div class="ad-section text-center">
+				<a href="#"><img src="images/ads/3.jpg" alt="Image" class="img-fluid"></a>
+			</div><!-- ad-section -->
+
+			<div class="section workshop-traning">
+				<div class="section-title">
+					<h4>Workshop Traning</h4>
+					<a href="#" class="btn btn-primary">See all</a>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="workshop">
+							<img src="images/job/5.png" alt="Image" class="img-fluid">
+							<h3><a href="#">Team Development Training</a></h3>
+							<h4>Course Duration: 3 Month ( Sat, Mon, Fri)</h4>
+							<div class="workshop-price">
+								<h5>Course instructor: Kim Jon ley</h5>
+								<h5>Course Amount: ¥20,000</h5>
+							</div>
+							<div class="ad-meta">
+								<div class="meta-content">
+									<span class="dated"><a href="#">7 Jan 10:10 pm </a></span>
+								</div>
+								<div class="user-option pull-right">
+									<a href="#"><i class="fa fa-map-marker"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="workshop">
+							<img src="images/job/6.png" alt="Image" class="img-fluid">
+							<h3><a href="#">Recruit Interview Training</a></h3>
+							<h4>Course Duration: 3 Month ( Sat, Mon, Fri)</h4>
+							<div class="workshop-price">
+								<h5>Course instructor: Kim Jon ley</h5>
+								<h5>Course Amount: ¥1,000</h5>
+							</div>
+							<div class="ad-meta">
+								<div class="meta-content">
+									<span class="dated"><a href="#">7 Jan 10:10 pm </a></span>
+								</div>
+								<div class="user-option pull-right">
+									<a href="#"><i class="fa fa-map-marker"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- workshop-traning -->
+
+			<div class="section cta cta-two text-center">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="single-cta">
+							<div class="cta-icon icon-jobs">
+								<img src="images/icon/31.png" alt="Icon" class="img-fluid">
+							</div><!-- cta-icon -->
+							<h3>30,412</h3>
+							<h4>Live Client</h4>
+							<p>Number of Client who learned </p>
+						</div>
+					</div><!-- single-cta -->
+
+					<div class="col-md-4">
+						<div class="single-cta">
+							<!-- cta-icon -->
+							<div class="cta-icon icon-company">
+								<img src="images/icon/32.png" alt="Icon" class="img-fluid">
+							</div><!-- cta-icon -->
+							<h3>1,043</h3>
+							<h4>Total Coaches</h4>
+							<p>Number of Coaches who registered</p>
+						</div>
+					</div><!-- single-cta -->
+
+					<div class="col-md-4">
+						<div class="single-cta">
+							<div class="cta-icon icon-candidate">
+								<img src="images/icon/33.png" alt="Icon" class="img-fluid">
+							</div><!-- cta-icon -->
+							<h3>5,298</h3>
+							<h4>Total Session</h4>
+							<p>Number of Sessions in Service</p>
+						</div>
+					</div><!-- single-cta -->
+				</div><!-- row -->
+			</div><!-- cta -->			
+
+		</div><!-- conainer -->
+	</div><!-- page -->
+	
+	<!-- advertisement -->
+	<section id="advertisement" class="clearfix parallax-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h2>Advertisement</h2>
+				</div>
+			</div><!-- row -->
+
+			<!-- row -->
+			<div class="row">
+				<!-- download-app -->
+				<div class="col-md-4">
+					<a href="#" class="advertisement-link">
+						<img src="images/icon/16.png" alt="Image" class="img-fluid">
+						<span class="pull-left">
+							<span>available on</span>
+							<strong>Google Play</strong>
+						</span>
+					</a>
+				</div><!-- download-app -->
+
+				<!-- download-app -->
+				<div class="col-md-4">
+					<a href="#" class="advertisement-link">
+						<img src="images/icon/17.png" alt="Image" class="img-fluid">
+						<span class="pull-left">
+							<span>available on</span>
+							<strong>App Store</strong>
+						</span>
+					</a>
+				</div><!-- download-app -->
+
+				<!-- download-app -->
+				<div class="col-md-4">
+					<a href="#" class="advertisement-link">
+						<img src="images/icon/18.png" alt="Image" class="img-fluid">
+						<span class="pull-left">
+							<span>available on</span>
+							<strong>Windows Store</strong>
+						</span>
+					</a>
+				</div><!-- download-app -->
+			</div><!-- row -->
+		</div><!-- contaioner -->
+	</section><!-- download -->
+	
+	<!-- footer -->
+	<footer id="footer" class="clearfix">
+		<!-- footer-top -->
+		<section class="footer-top clearfix">
+			<div class="container">
+				<div class="row">
+					<!-- footer-widget -->
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget">
+							<h3>Quik Links</h3>
+							<ul>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">All Cities</a></li>
+								<li><a href="#">Help & Support</a></li>
+								<li><a href="#">Advertise With Us</a></li>
+							</ul>
+						</div>
+					</div><!-- footer-widget -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- footer-top -->
+
+		<div class="footer-bottom clearfix text-center">
+			<div class="container">
+				<p>Copyright &copy; <a href="#">PCM</a> 2020. Developed by <a href="http://themeregion.com/">ThemeRegion</a></p>
+			</div>
+		</div><!-- footer-bottom -->
+	</footer><!-- footer -->
+	
+	<!--/End:Preset Style Chooser-->
+	
+    <!-- JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/price-range.js"></script>   
+    <script src="js/main.js"></script>
+	<script src="js/switcher.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-73239902-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>	
+  </body>
+</html>

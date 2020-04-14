@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<!-- load anything -->
+{% load i18n %}
+{% load account socialaccount %}
+
+<!-- Add extra header -->
+{% block extra_head %}
+{% endblock %}
+
+<!-- Title header -->
+{% block head_title %}Error:404 | ScproTech{% endblock %}
+
+<!-- Banner content -->
+{% block banner-content %}
+  <h2 class="title"> Service Error Page : error 500</h2>
+{% endblock %}
+
+<!-- Main content -->
+{% block content %}
+  {% get_providers as socialaccount_providers %}
+  <h2 class="ta-center">Service Error</h2><br/>
+  <h4 class="ta-center">This is service error. Please try agin from home.</h4>
+  <h4 class="ta-center"><a href="{% url 'scprotech:home' %}">Go to home</a></h4>
+{% endblock %}
+
+<!-- Add extra script -->
+{% block extra_script %}
+{% endblock %}

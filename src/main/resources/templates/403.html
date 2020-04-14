@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<!-- load anything -->
+{% load i18n %}
+{% load account socialaccount %}
+
+<!-- Add extra header -->
+{% block extra_head %}
+{% endblock %}
+
+<!-- Title header -->
+{% block head_title %}Forbidden Error:403 | ScproTech{% endblock %}
+
+<!-- Banner content -->
+{% block banner-content %}
+  <h2 class="title">Permission Denied Page : error 403</h2>
+  <p >You cannot access this page.</p>
+{% endblock %}
+
+<!-- Main content -->
+{% block content %}
+  {% get_providers as socialaccount_providers %}
+  <h2 class="ta-center">Permission denied.</h2>
+  <h4 class="ta-center"><a href="{% url 'scprotech:home' %}">Go to home</a></h4>
+{% endblock %}
+
+<!-- Add extra script -->
+{% block extra_script %}
+{% endblock %}
