@@ -75,18 +75,7 @@
 					<div class="dropdown category-dropdown">						
 						<a data-toggle="dropdown" href="#"><span class="change-text">Language</span> <i class="fa fa-angle-down"></i></a>
 						<ul class="dropdown-menu category-change">
-							<li><a href="#">HTML/CSS</a></li>
-							<li><a href="#">javascript</a></li>
-							<li><a href="#">Java</a></li>
-							<li><a href="#">Python</a></li>
-							<li><a href="#">AI/Machine Learning</a></li>
-							<li><a href="#">Ruby</a></li>
-							<li><a href="#">PHP</a></li>
-							<li><a href="#">Swift</a></li>
-							<li><a href="#">Kotlin</a></li>
-							<li><a href="#">Go</a></li>
-							<li><a href="#">C#</a></li>
-							<li><a href="#">Scala</a></li>
+							<li  th:each="cateogry : ${categories}"><a href="#" th:text="${cateogry.getCategoryName()}"></a></li>
 						</ul>								
 					</div><!-- category-change -->
 					<button type="submit" class="btn btn-primary" value="Search">Search</button>
@@ -119,7 +108,7 @@
 					
 					<li class="category-item">
 						<a href="#">
-							<div class="category-icon"><img src="images/logo/programing/java-logo-a.png" alt="images" class="img-fluid"></div>
+							<div class="category-icon"><img src="images/logo/programing/java-logo.png" alt="images" class="img-fluid"></div>
 							<span class="category-title">Java</span>
 							<span class="category-quantity">(252)</span>
 						</a>
@@ -127,7 +116,7 @@
 					
 					<li class="category-item">
 						<a href="#">
-							<div class="category-icon"><img src="images/logo/programing/python-logo-a.png" alt="images" class="img-fluid"></div>
+							<div class="category-icon"><img src="images/logo/programing/python-logo.png" alt="images" class="img-fluid"></div>
 							<span class="category-title">Python</span>
 							<span class="category-quantity">(212)</span>
 						</a>
@@ -143,7 +132,7 @@
 					
 					<li class="category-item">
 						<a href="#">
-							<div class="category-icon"><img src="images/logo/programing/ruby-logo-b.png" alt="images" class="img-fluid"></div>
+							<div class="category-icon"><img src="images/logo/programing/ruby-logo.png" alt="images" class="img-fluid"></div>
 							<span class="category-title">Ruby</span>
 							<span class="category-quantity">(312)</span>
 						</a>
@@ -151,7 +140,7 @@
 					
 					<li class="category-item">
 						<a href="#">
-							<div class="category-icon"><img src="images/logo/programing/php-logo-a.png" alt="images" class="img-fluid"></div>
+							<div class="category-icon"><img src="images/logo/programing/php-logo.png" alt="images" class="img-fluid"></div>
 							<span class="category-title">PHP</span>
 							<span class="category-quantity">(298)</span>
 						</a>
@@ -159,7 +148,7 @@
 					
 					<li class="category-item">
 						<a href="#">
-							<div class="category-icon"><img src="images/logo/programing/swift-logo-a.png" alt="images" class="img-fluid"></div>
+							<div class="category-icon"><img src="images/logo/programing/swift-logo.png" alt="images" class="img-fluid"></div>
 							<span class="category-title">Swift</span>
 							<span class="category-quantity">(212)</span>
 						</a>
@@ -167,7 +156,7 @@
 					
 					<li class="category-item">
 						<a href="#">
-							<div class="category-icon"><img src="images/logo/programing/kotlin-logo-c.png" alt="images" class="img-fluid"></div>
+							<div class="category-icon"><img src="images/logo/programing/kotlin-logo.png" alt="images" class="img-fluid"></div>
 							<span class="category-title">Kotlin</span>
 							<span class="category-quantity">(122)</span>
 						</a>
@@ -175,7 +164,7 @@
 					
 					<li class="category-item">
 						<a href="#">
-							<div class="category-icon"><img src="images/logo/programing/go-logo-a.png" alt="images" class="img-fluid"></div>
+							<div class="category-icon"><img src="images/logo/programing/go-logo.png" alt="images" class="img-fluid"></div>
 							<span class="category-title">Go</span>
 							<span class="category-quantity">(98)</span>
 						</a>
@@ -191,7 +180,7 @@
 
 					<li class="category-item">
 						<a href="#">
-							<div class="category-icon"><img src="images/logo/programing/scala-logo-a.png" alt="images" class="img-fluid"></div>
+							<div class="category-icon"><img src="images/logo/programing/scala-logo.png" alt="images" class="img-fluid"></div>
 							<span class="category-title">Scala</span>
 							<span class="category-quantity">(58)</span>
 						</a>
