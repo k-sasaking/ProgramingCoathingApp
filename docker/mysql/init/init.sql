@@ -1,3 +1,6 @@
+-- FOREIGN KEY 
+SET FOREIGN_KEY_CHECKS = 0;
+
 -- drop user
 DROP TABLE IF EXISTS `user`;
 
@@ -5,8 +8,10 @@ DROP TABLE IF EXISTS `user`;
 create table IF not exists `user`
 (
  `id`               INT AUTO_INCREMENT PRIMARY KEY,
- `email`            VARCHAR(255) NOT NULL,
+ `email`            VARCHAR(255) NOT NULL UNIQUE,
  `password`         VARCHAR(255) NOT NULL, 
+ `is_admin`         tinyint(1) NOT NULL DEFAULT '0', 
+ `last_login`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  `created_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  `updated_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -20,6 +25,8 @@ create table IF not exists `user_profile`
 (
  `user_id`          INT NOT NULL UNIQUE,
  `username`         VARCHAR(30),
+ `profile_text`          VARCHAR(255),
+ `learning_category`         VARCHAR(255),
  `created_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  `updated_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id)
@@ -34,9 +41,8 @@ DROP TABLE IF EXISTS `user_coach`;
 create table IF not exists `user_coach`
 (
  `user_id`          INT NOT NULL UNIQUE,
- `category`         VARCHAR(255),
- `profile`          VARCHAR(255),
- `RATING`           INT,
+ `teaching_category`         VARCHAR(255),
+ `rating`           INT,
  `created_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  `updated_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id)
@@ -53,8 +59,11 @@ create table IF not exists `product`
  `user_id`          INT NOT NULL,
  `title`            VARCHAR(50) NOT NULL,
  `price`            INT,
+ `contact_tools`    VARCHAR(255),
+ `time`             VARCHAR(255),
  `category`         VARCHAR(255),
  `description`      VARCHAR(255),
+ `is_published`     tinyint(1) NOT NULL DEFAULT '1', 
  `created_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  `updated_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id)
@@ -71,6 +80,8 @@ create table IF not exists `apply`
 (
  `product_id`       INT NOT NULL,
  `student_id`       INT NOT NULL,
+ `status`      tinyint(1) NOT NULL DEFAULT '0',
+ `message`          VARCHAR(255),
  `created_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  `updated_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (product_id)
@@ -79,8 +90,8 @@ create table IF not exists `apply`
       REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- drop favaorite
-DROP TABLE IF EXISTS `favaorite`;
+-- drop favorite
+DROP TABLE IF EXISTS `favorite`;
 
 -- create favorite
 create table IF not exists `favorite`
@@ -95,10 +106,10 @@ create table IF not exists `favorite`
       REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- drop favaorite
+-- drop category
 DROP TABLE IF EXISTS `category`;
 
--- create favorite
+-- create category
 create table IF not exists `category`
 (
  `id`       INT AUTO_INCREMENT PRIMARY KEY,
