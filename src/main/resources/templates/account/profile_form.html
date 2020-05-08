@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
@@ -10,7 +9,7 @@
 
     <title>Jobs | Job Portal / Job Board HTML Template</title>
 
-   <!-- CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" >
     <link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/icofont.css"> 
@@ -54,6 +53,12 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="/">Home</a></li>
+						<li class="dropdown active"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">UserName<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="/profile_edit">Edit profile</a></li>
+								<li><a href="/password_change">Password Change</a></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 				
@@ -65,87 +70,86 @@
 						<li><a href="/signup">Sign Up</a></li>
 					</ul><!-- sign-in -->					
 
-					<a href="/post" class="btn">Post Your Product</a>
+					<a href="/post" class="btn">Profile</a>
 				</div>
 				<!-- nav-right -->
 			</div><!-- container -->
 		</nav><!-- navbar -->
 	</header><!-- header -->
-
-	<section class=" job-bg ad-details-page">
+	
+	<section class="job-bg page job-details-page">
 		<div class="container">
 			<div class="breadcrumb-section">
-				<h2 class="title">Apply Form</h2>
-			</div><!-- banner -->
+				<ol class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+				</ol><!-- breadcrumb -->						
+				<h2 class="title">Edit Profile</h2>
+			</div><!-- breadcrumb -->
+
+			<div class="job-details">
+				<div class="section job-ad-item">
+					<div class="item-info">
+						<div class="item-image-box">
+							<div class="item-image">
+								<img src="images/ico/default-icon.png" alt="Image" class="img-fluid">
+							</div><!-- item-image -->
+						</div>
+						<div class="ad-info">
+							<span>@<a href="#" class="title"> Kazuya Sasaki</a></span>
+							<div class="ad-meta">
+								<ul class="teaching-category">
+									<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java</a></li>
+									<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Python</a></li>
+									<li><i class="fa fa-tags" aria-hidden="true"></i>Scala</li>
+									<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>HTML/CSS</a></li>
+									<li><i class="fa fa-tags" aria-hidden="true"></i>javascript</li>
+								</ul>
+							</div><!-- ad-meta -->									
+						</div><!-- ad-info -->
+					</div><!-- item-info -->
+				</div><!-- job-ad-item -->				
+			</div><!-- job-details -->
 			<div class="job-postdetails">
 				<div class="row">	
 					<div class="col-lg-12">
 						<form action="#">
 							<fieldset>
 								<div class="section postdetails">
-									<h4>Apply Form<span class="pull-right">* Requeire Fields</span></h4>
+									<h4>Profile Form<span class="pull-right">* Requeire Fields</span></h4>
 									<div class="row form-group">
-										<label class="col-sm-3 label-title">Title</label>
+										<label class="col-sm-3 label-title">Username</label>
 										<div class="col-sm-9">
-											<p>Java Basic 1</p>
+											<input type="text" class="form-control" placeholder="FirstName FamilyName">
 										</div>
 									</div>
 									<div class="row form-group">
-										<label class="col-sm-3 label-title">Description</label>
+										<label class="col-sm-3 label-title">Email<span class="required">*</span></label>
 										<div class="col-sm-9">
-											<p>Java Basic 1</p>
+											<input type="text" class="form-control" placeholder="test@rebelapp.com">
 										</div>
 									</div>
 									<div class="row form-group">
-										<label class="col-sm-3 label-title">Category</label>
-										<div class="col-sm-9">
-											<p>Java</p>
+										<label class="col-sm-3 label-title">Teaching Category</label>
+										<div class="checkbox agreement col-sm-9">
+											<label th:for="${cateogry.getCategoryName()}" th:each="cateogry : ${categories}">
+												<input type="checkbox" name="times" th:id="${cateogry.getCategoryName()}"><span th:text="${cateogry.getCategoryName()}"></span>
+											</label>
 										</div>
 									</div>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Price</label>
-										<div class="col-sm-9">
-											<p>3,000円/月</p>
-										</div>
-									</div>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Contact tools</label>
-										<div class="col-sm-9">
-											<p>Google Hangout/Slack</p>
-										</div>
-									</div>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Contact Times</label>
-										<div class="col-sm-9">
-											<p>休日/平日夜</p>
-										</div>
-									</div>
-								</div>			
-								<div class="section">
 									<div class="row form-group item-description">
-										<label class="col-sm-3 label-title">Message<span class="required">*</span></label>
+										<label class="col-sm-3 label-title">Profile Text</label>
 										<div class="col-sm-9">
 											<textarea class="form-control" id="textarea" placeholder="Write few lines about your Product" rows="8"></textarea>		
 										</div>
 									</div>
-									<div class="row characters">
-										<div class="col-sm-9 col-sm-offset-3">
-											<p>5000 characters left</p>
-										</div>
-									</div>
-									<div class="row characters">
-										<label for="send">
-											<input type="checkbox" name="send" id="send">
-											You agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a> .
-										</label>
-									</div>
-									<button type="submit" class="btn btn-primary">Post Your Job</button>
-								</div><!-- section -->	
+									<button type="submit" class="btn btn-primary">Update Profile</button>
+								</div><!-- postdetails -->
+																
 							</fieldset>
-						</form><!-- form -->
+						</form><!-- form -->	
 					</div>
-				</div><!-- photos-ad -->
-			</div><!-- postdetails -->
+				</div><!-- photos-ad -->				
+			</div>	
 		</div><!-- container -->
 	</section><!-- main -->
 	
@@ -222,7 +226,7 @@
 	</footer><!-- footer -->
 		
     <!-- JS -->
-    <script src="js/jquery.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/price-range.js"></script>   
