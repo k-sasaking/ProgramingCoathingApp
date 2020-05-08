@@ -1102,7 +1102,7 @@ a.verified i {
 .pagination {
 	margin-top: 25px;
 	margin-bottom:10px;
-	display: block;
+	/* display: block; */
 }
 
 .pagination>li {
