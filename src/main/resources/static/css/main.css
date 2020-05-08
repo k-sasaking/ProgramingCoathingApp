@@ -100,7 +100,7 @@ input:focus, textarea:focus, select:focus, .form-control:focus {
 
 .title {
 	line-height: 34px;
-	color: #ffffff;
+	/* color: #ffffff; */
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 700;
 }
