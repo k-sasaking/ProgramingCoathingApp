@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
@@ -9,7 +10,7 @@
 
     <title>Jobs | Job Portal / Job Board HTML Template</title>
 
-    <!-- CSS -->
+   <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" >
     <link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/icofont.css"> 
@@ -19,7 +20,6 @@
     <link rel="stylesheet" href="css/responsive.css">
 	
 	<!-- font -->
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Signika+Negative:400,300,600,700' rel='stylesheet' type='text/css'>
 
@@ -64,85 +64,89 @@
 						<li><a href="/signup">Sign Up</a></li>
 					</ul><!-- sign-in -->					
 
-					<a href="/post" class="btn">Profile</a>
+					<a href="/post" class="btn">Post Your Product</a>
 				</div>
 				<!-- nav-right -->
 			</div><!-- container -->
 		</nav><!-- navbar -->
 	</header><!-- header -->
-	
-	<section class="job-bg page job-details-page">
+
+	<section class=" job-bg ad-details-page">
 		<div class="container">
 			<div class="breadcrumb-section">
-				<ol class="breadcrumb">
-					<li><a href="index.html">Home</a></li>
-				</ol><!-- breadcrumb -->						
-				<h2 class="title">Profile</h2>
-			</div><!-- breadcrumb -->
-
-			<div class="job-details">
-				<div class="section job-ad-item">
-					<div class="item-info">
-						<div class="item-image-box">
-							<div class="item-image">
-								<img src="images/ico/default-icon.png" alt="Image" class="img-fluid">
-							</div><!-- item-image -->
-						</div>
-						<div class="ad-info">
-							<span>@<a href="#" class="title"> Kazuya Sasaki</a></span>
-							<div class="ad-meta">
-								<ul class="teaching-category">
-									<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java</a></li>
-									<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Python</a></li>
-									<li><i class="fa fa-tags" aria-hidden="true"></i>Scala</li>
-									<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>HTML/CSS</a></li>
-									<li><i class="fa fa-tags" aria-hidden="true"></i>javascript</li>
-								</ul>
-							</div><!-- ad-meta -->									
-						</div><!-- ad-info -->
-					</div><!-- item-info -->
-					<div class="social-media">
-						<ul class="share-social">
-							<li>Share this ad</li>
-							<li><a href="#"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter-square" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fab fa-google-plus-square" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fab fa-pinterest-square" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fab fa-tumblr-square" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>					
-				</div><!-- job-ad-item -->
-				
-				<div class="job-details-info">
-					<div class="row">
-						<div class="col-md-8">
-							<div class="section job-description">
-								<div class="description-info">
-									<h1>Profile</h1>
-									<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni।</p>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-md-4">
-							<div class="section job-short-info">
-								<h1>Product Info</h1>
-								<ul>
-									<li><span class="icon"><i class="fa fa-book-open" aria-hidden="true"></i></span>Java Basic1</li>
-									<li><span class="icon"><i class="fa fa-book-open" aria-hidden="true"></i></span> Java Basic2</li>
-									<li><span class="icon"><i class="fa fa-book-open" aria-hidden="true"></i></span>Java Basic3</li>
-									<li><span class="icon"><i class="fa fa-book-open" aria-hidden="true"></i></span>Python Basic1</li>
-									<li><span class="icon"><i class="fa fa-book-open" aria-hidden="true"></i></span>Python Basic1</li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- row -->					
-				</div><!-- job-details-info -->				
-			</div><!-- job-details -->
+				<h2 class="title">Apply Form</h2>
+			</div><!-- banner -->
+			<div class="job-postdetails">
+				<div class="row">	
+					<div class="col-lg-12">
+						<form action="#">
+							<fieldset>
+								<div class="section postdetails">
+									<h4>Apply Form<span class="pull-right">* Requeire Fields</span></h4>
+									<div class="row form-group">
+										<label class="col-sm-3 label-title">Title</label>
+										<div class="col-sm-9">
+											<p>Java Basic 1</p>
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-sm-3 label-title">Description</label>
+										<div class="col-sm-9">
+											<p>Java Basic 1</p>
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-sm-3 label-title">Category</label>
+										<div class="col-sm-9">
+											<p>Java</p>
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-sm-3 label-title">Price</label>
+										<div class="col-sm-9">
+											<p>3,000円/月</p>
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-sm-3 label-title">Contact tools</label>
+										<div class="col-sm-9">
+											<p>Google Hangout/Slack</p>
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-sm-3 label-title">Contact Times</label>
+										<div class="col-sm-9">
+											<p>休日/平日夜</p>
+										</div>
+									</div>
+								</div>			
+								<div class="section">
+									<div class="row form-group item-description">
+										<label class="col-sm-3 label-title">Message<span class="required">*</span></label>
+										<div class="col-sm-9">
+											<textarea class="form-control" id="textarea" placeholder="Write few lines about your Product" rows="8"></textarea>		
+										</div>
+									</div>
+									<div class="row characters">
+										<div class="col-sm-9 col-sm-offset-3">
+											<p>5000 characters left</p>
+										</div>
+									</div>
+									<div class="row characters">
+										<label for="send">
+											<input type="checkbox" name="send" id="send">
+											You agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a> .
+										</label>
+									</div>
+									<button type="submit" class="btn btn-primary">Post Your Job</button>
+								</div><!-- section -->	
+							</fieldset>
+						</form><!-- form -->
+					</div>
+				</div><!-- photos-ad -->
+			</div><!-- postdetails -->
 		</div><!-- container -->
-	</section><!-- job-details-page -->
+	</section><!-- main -->
 	
 	<!-- footer -->
 	<footer id="footer" class="clearfix">
@@ -217,7 +221,7 @@
 	</footer><!-- footer -->
 		
     <!-- JS -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/price-range.js"></script>   

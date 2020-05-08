@@ -47,29 +47,11 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="fa fa-align-justify"></i></span>
                 </button>
-				<a class="navbar-brand" href="index.html"><img class="img-fluid" src="images/logo.png" alt="Logo"></a>
+				<a class="navbar-brand" href="/"><img class="img-fluid" src="images/logo/pcm-logo.png" alt="Logo"></a>
 				
-
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="job-list.html">Job list</a></li>
-						<li><a href="details.html">Job Details</a></li>
-						<li><a href="resume.html">Resume</a></li> 
-						<li class="dropdown active"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="profile.html">profile</a></li>
-								<li><a href="post-resume.html">Post Resume</a></li>
-								<li><a href="post.html">Job Post</a></li>
-								<li><a href="edit-resume.html">Edit Resume</a></li>
-								<li><a href="profile-details.html">profile Details</a></li>
-								<li><a href="bookmark.html">Bookmark</a></li>
-								<li><a href="applied-job.html">Applied Job</a></li>
-								<li><a href="delete-account.html">Close Account</a></li>
-								<li class="active"><a href="signup.html">Job Signup</a></li>
-								<li><a href="signin.html">Job Signin</a></li>
-							</ul>
-						</li>
+						<li class="active"><a href="/">Home</a></li>
 					</ul>
 				</div>
 				
@@ -77,16 +59,17 @@
 				<div class="nav-right">				
 					<ul class="sign-in">
 						<li><i class="fa fa-user"></i></li>
-						<li><a href="signin.html">Sign In</a></li>
-						<li><a href="signup.html">Register</a></li>
+						<li><a href="/signin">Sign In</a></li>
+						<li><a href="/signup">Sign Up</a></li>
 					</ul><!-- sign-in -->					
 
-					<a href="post.html" class="btn">Post Your Job</a>
+					<a href="/post" class="btn">Post Your Product</a>
 				</div>
 				<!-- nav-right -->
 			</div><!-- container -->
 		</nav><!-- navbar -->
 	</header><!-- header -->
+
 
 	<section class="job-bg user-page">
 		<div class="container  text-center">
@@ -94,10 +77,8 @@
 				<div class="user-account job-user-account">
 					<h2>Create An Account</h2>
 						<ul class="nav nav-tabs text-center" role="tablist">
-							<li role="presentation"><a class="active" href="#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Find A Job</a></li>
-							<li role="presentation"><a href="#post-job" aria-controls="post-job" role="tab" data-toggle="tab">Post A Job</a></li>
+							<li role="presentation"><a class="active" href="#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Signup User</a></li>
 						</ul>
-
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane active show" id="find-job">
 								<form action="#">
@@ -112,44 +93,9 @@
 									</div>
 									<div class="form-group">
 										<input type="password" class="form-control" placeholder="Confirm Password">
-									</div>
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Mobile Number">
-									</div>
-									<!-- select -->
-									<select class="form-control">
-										<option value="#">Select City</option>
-										<option value="#">London UK</option>
-										<option value="#">Newyork, USA</option>
-										<option value="#">Seoul, Korea</option>
-										<option value="#">Beijing, China</option>
-									</select><!-- select -->
-	
+									</div>	
 									<div class="checkbox">
 										<label class="pull-left checked" for="signing"><input type="checkbox" name="signing" id="signing"> By signing up for an account you agree to our Terms and Conditions </label>
-									</div><!-- checkbox -->	
-									<button type="submit" class="btn">Registration</button>	
-								</form>
-							</div>
-							<div role="tabpanel" class="tab-pane" id="post-job">
-								<form action="#">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Employer Name" >
-									</div>
-									<div class="form-group">
-										<input type="email" class="form-control" placeholder="Email Id">
-									</div>
-									<div class="form-group">
-										<input type="password" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group">
-										<input type="password" class="form-control" placeholder="Confirm Password">
-									</div>
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Contact Number">
-									</div>
-									<div class="checkbox">
-										<label class="pull-left checked" for="signing-2"><input type="checkbox" name="signing-2" id="signing-2">By signing up for an account you agree to our Terms and Conditions</label>
 									</div><!-- checkbox -->	
 									<button type="submit" class="btn">Registration</button>	
 								</form>

@@ -23,5 +23,9 @@ public class AccountController {
         return "account/profile";
     }
 
+    @RequestMapping(value = "/profile/edit", method = RequestMethod.GET)
+    public String profile_form(Model model) {
+        return "account/profile_form";
+    }
 	
 }
