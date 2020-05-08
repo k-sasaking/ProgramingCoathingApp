@@ -1,29 +1,26 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head  th:replace="base/common :: meta_head('403 | Programing Coaching',~{::link},~{::script})">
+      <link rel="stylesheet" th:href="@{/css/top.css}" />
+      <script type="text/javascript" th:src="@{/js/sample.js}"></script>
+  </head>
+  <body>
+    <header th:replace="base/common :: header"></header>
 
-<!-- load anything -->
-{% load i18n %}
-{% load account socialaccount %}
+    <div th:replace="base/common :: message"></div>
+    
+   	<div class="banner-job">
+		<div class="banner-overlay"></div>
+		<div class="container text-center">
+			<h1 class="title">Permission Denied Page : error 403</h1>
+			<h3>You cannot access this page.</h3>
+		</div><!-- container -->
+	</div><!-- banner-section -->
+    
+    <footer th:replace="base/common :: footer"></footer>
+		
+    <div th:replace="base/common :: end_script"></div>
 
-<!-- Add extra header -->
-{% block extra_head %}
-{% endblock %}
-
-<!-- Title header -->
-{% block head_title %}Forbidden Error:403 | ScproTech{% endblock %}
-
-<!-- Banner content -->
-{% block banner-content %}
-  <h2 class="title">Permission Denied Page : error 403</h2>
-  <p >You cannot access this page.</p>
-{% endblock %}
-
-<!-- Main content -->
-{% block content %}
-  {% get_providers as socialaccount_providers %}
-  <h2 class="ta-center">Permission denied.</h2>
-  <h4 class="ta-center"><a href="{% url 'scprotech:home' %}">Go to home</a></h4>
-{% endblock %}
-
-<!-- Add extra script -->
-{% block extra_script %}
-{% endblock %}
+  </body>
+</html>
