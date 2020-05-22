@@ -8,43 +8,37 @@
   <body>
     <header th:replace="base/common :: header"></header>
 
-    <div th:replace="base/common :: message"></div>
 
-
+	<article>
+	    <div class="alert alert-danger" th:if="${errorMessage}" th:text="${errorMessage}" role="alert">...</div>
 	<!-- signin-page -->
-	<section class="clearfix job-bg user-page">
 		<div class="container text-center">
 			<div class="user-account-content">
 				<div class="user-account">
-					<h2>User Login</h2>
+					<h2>User Signin</h2>
 					<!-- form -->
-					<form action="#">
+					<form th:action="@{/signin}" method="post" class="mx-auto w-50">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Username" >
+							<label for="username">Username</label>
+							<input type="text" id="username" class="form-control" placeholder="Username" name="username" th:value="${username}" required>
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Password" >
+							<label for="password">Password</label>
+							<input type="password" id="password" class="form-control" placeholder="Password" name="password" th:value="${password}" required>
 						</div>
-						<button type="submit" href="#" class="btn">Login</button>
+						
+						<div class="text-center m-5">
+						    <button type="submit" class="form-control btn btn-primary">Signin</button>
+						    <p>If you dont't have account, you can <a href="/signup">Signup</a>.</p>
+					  	</div>
 					</form><!-- form -->
-				
-					<!-- forgot-password -->
-					<div class="user-option">
-						<div class="checkbox pull-left">
-							<label for="logged"><input type="checkbox" name="logged" id="logged"> Keep me logged in </label>
-						</div>
-						<div class="pull-right forgot-password">
-							<a href="#">Forgot password</a>
-						</div>
-					</div><!-- forgot-password -->
 				</div>
-				<a href="#" class="btn-primary">Create a New Account</a>
-			</div><!-- user-login -->	
+			</div>
 		</div><!-- container -->
-	</section><!-- signin-page -->
+	</article>
 	
     <footer th:replace="base/common :: footer"></footer>
 	
     <div th:replace="base/common :: end_script"></div>
   </body>
-</html></html>
+</html>
