@@ -66,10 +66,11 @@ DROP TABLE IF EXISTS `favorite`;
 -- create favorite
 create table IF not exists `favorite`
 (
- `product_id`       INT NOT NULL PRIMARY KEY,
- `student_id`       INT NOT NULL PRIMARY KEY,
+ `product_id`       INT NOT NULL,
+ `student_id`       INT NOT NULL,
  `created_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  `updated_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`product_id`, `student_id`),
   FOREIGN KEY (product_id)
       REFERENCES product(id) ON DELETE CASCADE,
   FOREIGN KEY (student_id)
@@ -193,7 +194,7 @@ VALUES
 INSERT INTO `favorite` 
 (`product_id`, `student_id`) 
 VALUES 
-(2, 6,),
+(2, 6),
 (2, 7),
 (2, 8),
 (2, 9),
