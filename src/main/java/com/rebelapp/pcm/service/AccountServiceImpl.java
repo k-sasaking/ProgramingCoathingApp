@@ -9,11 +9,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.rebelapp.pcm.entity.User;
 import com.rebelapp.pcm.entity.UserDetailsImpl;
 import com.rebelapp.pcm.repository.UserRepository;
 
+@Service
 public class AccountServiceImpl implements AccountService, UserDetailsService {
 
 	private UserRepository userRepository;
@@ -37,7 +39,7 @@ public class AccountServiceImpl implements AccountService, UserDetailsService {
 	@Override
 	public Optional<User> getUser(String userName) {
 
-		return userRepository.findByUserName(userName);
+		return userRepository.findByUsername(userName);
 	}
 
 	@Override

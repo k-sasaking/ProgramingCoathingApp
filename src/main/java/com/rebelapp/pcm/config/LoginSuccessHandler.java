@@ -8,17 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
-public abstract class LoginSuccessHandler implements AuthenticationFailureHandler {
-	
-	
-	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication ) 
-		throws IOException, ServletException
-	{
+public class LoginSuccessHandler implements AuthenticationSuccessHandler {
+
+	@Override
+	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+			Authentication authentication) throws IOException, ServletException {
 		response.sendRedirect("/");
 	}
-	
+
 }

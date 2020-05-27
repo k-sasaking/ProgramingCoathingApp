@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rebelapp.pcm.config.Settings;
 import com.rebelapp.pcm.entity.Category;
-import com.rebelapp.pcm.service.CommonService;
+import com.rebelapp.pcm.service.CategoryService;
 
 @Controller
 public class PostController {
 
-    @Autowired
-    CommonService<Category,Long> commonService;
+	@Autowired
+	CategoryService categoryService;
 	
     @RequestMapping(value = "/post", method = RequestMethod.GET)
     public String detail(Model model) {
     	
-    	List<Category> categories = commonService.findAll();
+    	List<Category> categories = categoryService.findAll();
     	model.addAttribute("categories", categories);
     	model.addAttribute("contact_tools", Settings.CONTACT_TOOLS.values());
     	model.addAttribute("contact_times", Settings.CONNTACT_DATE.values());
