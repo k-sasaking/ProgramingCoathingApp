@@ -48,6 +48,11 @@ public class AccountServiceImpl implements AccountService, UserDetailsService {
 		user.setPassword(encodedPassword);
 		userRepository.saveAndFlush(user);
 	}
+	
+	@Override
+	public void signupUser(User user) {
+		
+	}
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
