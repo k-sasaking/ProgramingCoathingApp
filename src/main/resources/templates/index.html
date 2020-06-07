@@ -156,18 +156,6 @@
 									</div><!-- item-image -->
 								</div>
 
-								<div class="ad-info">
-									<span><a href="/detail" class=title>javascript</a> @ <a href="/profile">Kazuya Sasaki</a></span>
-									<div class="ad-meta">
-										<ul>
-											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
-											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java</a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
-										</ul>
-									</div><!-- ad-meta -->									
-								</div><!-- ad-info -->
 								<div class="button">
 									<a href="/apply" class="btn btn-primary">Apply Now</a>
 									<a href="#"><span class="p-2 btn-fav"><i class="far fa-heart"></i></span></a>
@@ -188,8 +176,8 @@
 									<div class="ad-meta">
 										<ul>
 											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>蟷ｳ譌･螟�, 莨第律</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>ﾂ･5,000/1month</a></li>
 											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java</a></li>
 											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
 										</ul>
@@ -215,8 +203,8 @@
 									<div class="ad-meta">
 										<ul>
 											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>縺�縺､縺ｧ繧�</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>ﾂ･5,000/1month</a></li>
 											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Python, Django</a></li>
 											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
 										</ul>
@@ -242,8 +230,8 @@
 									<div class="ad-meta">
 										<ul>
 											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>縺�縺､縺ｧ繧�</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>ﾂ･5,000/1month</a></li>
 											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Ruby</a></li>
 											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
 										</ul>
@@ -278,7 +266,7 @@
 					</div><!-- tab-pane -->
 
 					<div role="tabpanel" class="tab-pane fade in active show" id="popular-jobs">
-						<div class="job-ad-item">
+						<div class="job-ad-item" th:each="product: ${products}">
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
@@ -287,15 +275,15 @@
 								</div>
 
 								<div class="ad-info">
-									<span><a href="/detail" class=title>javascript</a> @ <a href="/profile">Kazuya Sasaki</a></span>
+									<span><a href="/detail" class=title th:text="${product.getTitle()}"></a> @ <a href="/profile">Kazuya Sasaki</a></span>
 									<div class="ad-meta">
-										<ul>
-											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
-											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java</a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
-										</ul>
+									<ul>
+											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span th:text="${product.getContactTools()}"></span></a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true" ></i><span th:text="${product.getTime()}"></span></a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i><span th:text="${product.getPrice()}"></span></a></li>
+											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span th:text="${product.getCategory()}"></span></a></li>
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><span th:text="${product.getRating()}"></span></li>
+									</ul>
 									</div><!-- ad-meta -->									
 								</div><!-- ad-info -->
 								<div class="button">
@@ -305,85 +293,6 @@
 							</div><!-- item-info -->
 						</div><!-- ad-item -->	
 
-						<div class="job-ad-item">
-							<div class="item-info">
-								<div class="item-image-box">
-									<div class="item-image">
-										<a href="/detail"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
-									</div><!-- item-image -->
-								</div>
-
-								<div class="ad-info">
-									<span><a href="/detail" class="title">Java Coaching</a> @ <a href="/profile">Kazuya Sasaki</a></span>
-									<div class="ad-meta">
-										<ul>
-											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
-											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java</a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
-										</ul>
-									</div><!-- ad-meta -->									
-								</div><!-- ad-info -->
-								<div class="button">
-									<a href="/apply" class="btn btn-primary">Apply Now</a>
-									<a href="#"><span class="p-2 btn-fav"><i class="far fa-heart"></i></span></a>
-								</div>
-							</div><!-- item-info -->
-						</div><!-- ad-item -->	
-					
-						<div class="job-ad-item">
-							<div class="item-info">
-								<div class="item-image-box">
-									<div class="item-image">
-										<a href="/detail"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
-									</div><!-- item-image -->
-								</div>
-
-								<div class="ad-info">
-									<span><a href="/detail" class="title">Python Coaching</a> @ <a href="/profile">Kazuya Sasaki</a></span>
-									<div class="ad-meta">
-										<ul>
-											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
-											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Python, Django</a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
-										</ul>
-									</div><!-- ad-meta -->									
-								</div><!-- ad-info -->
-								<div class="button">
-									<a href="/apply" class="btn btn-primary">Apply Now</a>
-									<a href="#"><span class="p-2 btn-fav"><i class="far fa-heart"></i></span></a>
-								</div>
-							</div><!-- item-info -->
-						</div><!-- ad-item -->	
-
-						<div class="job-ad-item">
-							<div class="item-info">
-								<div class="item-image-box">
-									<div class="item-image">
-										<a href="/detail"><img src="images/ico/default-icon.png" alt="Image" class="img-fluid"></a>
-									</div><!-- item-image -->
-								</div>
-								<div class="ad-info">
-									<span><a href="/detail" class="title">Ruby on Rails Coaching</a> @ <a href="/profile">Kazuya Sasaki</a></span>
-									<div class="ad-meta">
-										<ul>
-											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
-											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Ruby</a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
-										</ul>
-									</div><!-- ad-meta -->									
-								</div><!-- ad-info -->
-								<div class="button">
-									<a href="/apply" class="btn btn-primary">Apply Now</a>
-									<a href="#"><span class="p-2 btn-fav"><i class="far fa-heart"></i></span></a>
-								</div>
-							</div><!-- item-info -->
-						</div><!-- ad-item -->
 						<nav aria-label="Page navigation example">
 						  <ul class="pagination justify-content-center">
 						    <li class="page-item">
@@ -420,8 +329,8 @@
 									<div class="ad-meta">
 										<ul>
 											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>蟷ｳ譌･螟�, 莨第律</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>ﾂ･5,000/1month</a></li>
 											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java</a></li>
 											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
 										</ul>
@@ -448,8 +357,8 @@
 									<div class="ad-meta">
 										<ul>
 											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>平日夜, 休日</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>蟷ｳ譌･螟�, 莨第律</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>ﾂ･5,000/1month</a></li>
 											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Java</a></li>
 											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
 										</ul>
@@ -475,8 +384,8 @@
 									<div class="ad-meta">
 										<ul>
 											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>縺�縺､縺ｧ繧�</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>ﾂ･5,000/1month</a></li>
 											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Python, Django</a></li>
 											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
 										</ul>
@@ -502,8 +411,8 @@
 									<div class="ad-meta">
 										<ul>
 											<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Google Hangout/Slack</a></li>
-											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>いつでも</a></li>
-											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>¥5,000/1month</a></li>
+											<li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>縺�縺､縺ｧ繧�</a></li>
+											<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>ﾂ･5,000/1month</a></li>
 											<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Ruby</a></li>
 											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>3</li>
 										</ul>
@@ -555,7 +464,7 @@
 							<h4>Course Duration: 3 Month ( Sat, Mon, Fri)</h4>
 							<div class="workshop-price">
 								<h5>Course instructor: Kim Jon ley</h5>
-								<h5>Course Amount: ¥20,000</h5>
+								<h5>Course Amount: ﾂ･20,000</h5>
 							</div>
 							<div class="ad-meta">
 								<div class="meta-content">
@@ -574,7 +483,7 @@
 							<h4>Course Duration: 3 Month ( Sat, Mon, Fri)</h4>
 							<div class="workshop-price">
 								<h5>Course instructor: Kim Jon ley</h5>
-								<h5>Course Amount: ¥1,000</h5>
+								<h5>Course Amount: ﾂ･1,000</h5>
 							</div>
 							<div class="ad-meta">
 								<div class="meta-content">
