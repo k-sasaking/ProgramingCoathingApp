@@ -11,6 +11,6 @@ import com.rebelapp.pcm.entity.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    List<Product> findAll();
-
+    //List<Product> findAll();
+    List<Product> findByTitleLike(String word);
 }
