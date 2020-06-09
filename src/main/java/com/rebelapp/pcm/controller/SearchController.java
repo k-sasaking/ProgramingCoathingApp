@@ -22,7 +22,8 @@ public class SearchController {
     	return "search/detail";
     }
     
-
+    if("".equals(searchWord))
+    return "forward:/";
     
     
     @RequestMapping(value = "/search", method = RequestMethod.GET)
