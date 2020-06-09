@@ -6,6 +6,7 @@ import com.rebelapp.pcm.entity.Product;
 
 public interface ProductService {
 
-    public List<Product> getAllProducts();
+    //public List<Product> getAllProducts();
+    public List<Product> searchProducts(String word);
 
 }
