@@ -14,11 +14,12 @@ import javax.validation.constraints.NotBlank;
 public class User {
 	
 	@Id
-	@Email
 	@Column(name = "username")
 	private String username;
 	
 	@NotBlank
+	@Email
+	@Column(name = "email")
 	private String email;
 	
 	@Column(name = "password")

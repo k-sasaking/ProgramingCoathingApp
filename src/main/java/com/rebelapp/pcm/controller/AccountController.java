@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rebelapp.pcm.entity.Category;
+import com.rebelapp.pcm.form.SignupForm;
 import com.rebelapp.pcm.service.CategoryService;
 
 @Controller
@@ -24,7 +25,7 @@ public class AccountController {
     }
     
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
-    public String signup(Model model) {
+    public String signup(Model model, SignupForm signupForm) {
         return "account/signup";
     }
     

@@ -13,12 +13,17 @@ import org.springframework.stereotype.Service;
 
 import com.rebelapp.pcm.entity.User;
 import com.rebelapp.pcm.entity.UserDetailsImpl;
+import com.rebelapp.pcm.entity.UserToken;
+import com.rebelapp.pcm.form.SignupForm;
+import com.rebelapp.pcm.repository.ConfirmTokenRepository;
 import com.rebelapp.pcm.repository.UserRepository;
 
 @Service
 public class AccountServiceImpl implements AccountService, UserDetailsService {
 
 	private UserRepository userRepository;
+	
+	private ConfirmTokenRepository confirmTokenRepository;
 
 	@Autowired
 	public AccountServiceImpl(UserRepository userRepository) {
@@ -50,9 +55,23 @@ public class AccountServiceImpl implements AccountService, UserDetailsService {
 	}
 	
 	@Override
-	public void signupUser(User user) {
+	public void signupUser(SignupForm signupForm) {
+		String encodedPassword = passwordEncoder().encode(signupForm.getPassword());
+		User user = new User();
+		user.setUsername(signupForm.getUserName());
+		user.setEmail(signupForm.getEmail());
+		user.setPassword(encodedPassword);
+		userRepository.saveAndFlush(user);
+	}
+	
+	@Override
+	public void tokenRegister(SignupForm signupForm) {
+		UserToken userToken = new UserToken();
+		confirmTokenRepository.saveAndFlush(userToken);
 		
 	}
+	
+	
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {

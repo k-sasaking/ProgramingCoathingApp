@@ -41,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests()
 			.antMatchers("/css/**","/js/**","/images/**").permitAll()
-			.antMatchers("/", "/search", "/signin", "/signup", "/signup-confirm").permitAll()
+			.antMatchers("/", "/search", "/signin", "/signup", "/signup-confirm", "/mail").permitAll()
 			.anyRequest().authenticated();
 
 		// Login Screen
