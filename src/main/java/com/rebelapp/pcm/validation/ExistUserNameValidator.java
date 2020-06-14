@@ -6,10 +6,12 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 
 import com.rebelapp.pcm.entity.User;
 import com.rebelapp.pcm.service.AccountService;
 
+@Validated
 public class ExistUserNameValidator implements ConstraintValidator<ExistUserName, String>{
 	@Autowired
     AccountService accountService;

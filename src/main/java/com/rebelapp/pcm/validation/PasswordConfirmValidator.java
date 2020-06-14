@@ -5,7 +5,9 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.validation.annotation.Validated;
 
+@Validated
 public class PasswordConfirmValidator implements ConstraintValidator<PasswordConfirm, Object>{
 	
 	private String message;
