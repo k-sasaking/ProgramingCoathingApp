@@ -89,7 +89,7 @@
 			<h1 class="title">Find your Programing Coaching</h1>
 			<h3>We have about 1000 coaches</h3>
 			<div class="banner-form">
-				<form action="#" class="clearfix">
+				<form action="/search" class="clearfix">
 					<input type="text" class="form-control" placeholder="Type your key word">
 					<div class="dropdown category-dropdown">						
 						<a data-toggle="dropdown" href="#"><span class="change-text">Language</span> <i class="fa fa-angle-down"></i></a>
@@ -97,6 +97,7 @@
 							<li  th:each="cateogry : ${categories}"><a href="#" th:text="${cateogry.getCategoryName()}"></a></li>
 						</ul>								
 					</div><!-- category-change -->
+					
 					<button type="submit" class="btn btn-primary" value="Search">Search</button>
 				</form>
 			</div><!-- banner-form -->

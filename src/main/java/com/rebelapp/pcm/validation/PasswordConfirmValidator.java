@@ -33,11 +33,9 @@ public class PasswordConfirmValidator implements ConstraintValidator<PasswordCon
 			return true;
 		}
 		
-		
 		context.disableDefaultConstraintViolation();
 	    context.buildConstraintViolationWithTemplate(message)
 	             .addPropertyNode(confirmPasswordFieldName).addConstraintViolation();
-		
 		
 		return false;
 		

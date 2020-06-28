@@ -1,13 +1,7 @@
 package com.rebelapp.pcm.controller;
 
-import com.rebelapp.pcm.entity.User;
-import com.rebelapp.pcm.entity.UserToken;
-import com.rebelapp.pcm.form.SignupForm;
-import com.rebelapp.pcm.repository.ConfirmTokenRepository;
-import com.rebelapp.pcm.repository.UserRepository;
-import com.rebelapp.pcm.service.JavaMailSenderService;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,61 +10,72 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import com.rebelapp.pcm.form.SignupForm;
+import com.rebelapp.pcm.service.AccountService;
+
 
 @Controller
-public class SignupController {
+public class SignUpController {
+	
+	@Autowired
+	AccountService accountService;
+	
+	@Autowired
+	private MailSender mailSender;
+	
+	@RequestMapping(value="/signup", method=RequestMethod.GET)
+	public String signup(
+			Model model,
+			@ModelAttribute("signupForm")
+			SignupForm signupForm
+			) {
+		model.addAttribute("signupForm",signupForm);
+		return "account/signup";
+	}
+	
+	@RequestMapping(value="/signup", method=RequestMethod.POST)
+	public String doSignup(Model model,
+        @ModelAttribute("signupForm")
+        @Validated
+        SignupForm signupForm,
+        BindingResult result
+        ) {
+		
+//		if(result.hasErrors()) {
+//	        model.addAttribute("postForm", signupForm);     
+//	       return "account/signup";
+//	    }
+//		
+//        SimpleMailMessage mailMessage = new SimpleMailMessage();
+//        mailMessage.setSubject("Confirm Your Account!");
+//        mailMessage.setFrom("example@");
+//        mailMessage.setText("testestsetesteststeststestesteststs");
+//        mailSender.send(mailMessage);
 
-    @Autowired
-    UserRepository userRepository;
+        // 送信後の処理
+//        model.addAttribute("emailId", signupForm.getUserName());
+//        model.addAttribute("successfulRegisteration");
+//
+//	
+//	   accountService.signupUser(signupForm.getUser());
+//	   return "redirect:/signin?username=" + signupForm.getUserName();
+        return "redirect:/";
+		
+	}
+	
+	@RequestMapping(value="/mail", method=RequestMethod.GET)
+	public String sendMail(Model model) {
+		
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setSubject("Confirm Your Account!");
+        mailMessage.setFrom("noreply@example.com");
+        mailMessage.setTo("tanuking.ponta@gmail.com");
+        mailMessage.setText("testestsetesteststeststestesteststs");
+        mailSender.send(mailMessage);
+        
+        return "index";
+		
+	}
 
-    @Autowired
-    ConfirmTokenRepository confirmTokenRepository;
-
-    @Autowired
-    JavaMailSenderService javaMailSenderService;
-
-    @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String doSignup(Model model, @ModelAttribute("signupForm") @Validated SignupForm signupForm,
-            BindingResult result) {
-        if (result.hasErrors()) {
-
-            model.addAttribute("postForm", signupForm);
-            return "signup";
-        } else {
-            userRepository.save(signupForm);
-            UserToken userToken = new UserToken();
-            confirmTokenRepository.save(userToken);
-            SimpleMailMessage mailMessage = new SimpleMailMessage();
-            mailMessage.setSubject("Confirm Your Account!");
-            mailMessage.setFrom("rebelapp@gmail.com");
-            mailMessage.setText("To confirm your account, please click here : "
-                    + "http://localhost:8080/confirm-account?token=" + userToken.getConfirmationToken());
-            javaMailSenderService.sendEmail(mailMessage);
-
-            // 送信後の処理
-            model.addAttribute("emailId", signupForm.getUserName());
-            model.addAttribute("successfulRegisteration");
-        }
-
-        return "/";
-    }
-
-    @RequestMapping(value = "/confirm-account", method = { RequestMethod.GET, RequestMethod.POST })
-    public String confirmUserAccount(Model model, @RequestParam("token") String confirmationToken) {
-        UserToken userToken = confirmTokenRepository.findByConfirmationToken(confirmationToken);
-        // トークン情報をUserインスタンスへ挿入
-        // 認証とユーザー情報の処理
-        if (userToken != null) {
-            User user = userRepository.findByEmail(userToken.getUser().getEmail());
-            userRepository.save(user);
-            model.addAttribute("accountVerified");
-        } else {
-            model.addAttribute("message", "The link is invalid or broken!");
-            model.addAttribute("error");
-        }
-
-        return "congratulations";
-    }
-    // getters and setters
 }

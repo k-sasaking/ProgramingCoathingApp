@@ -20,10 +20,8 @@ public class IndexController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
     	
-    	List<Category> categories = categoryService.findAll();
-    	model.addAttribute("categories", categories);
     	
-        return "index";
+        return "forward:/search";
 
     }
         	

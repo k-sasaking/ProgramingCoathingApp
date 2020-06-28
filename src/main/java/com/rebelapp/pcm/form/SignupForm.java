@@ -9,32 +9,32 @@ import com.rebelapp.pcm.validation.PasswordConfirm;
 
 
 
-@PasswordConfirm(password = "password", confirmPassword = "confirmPassword")
+//@PasswordConfirm(password = "password", confirmPassword = "confirmPassword")
 public class SignupForm {
 	
-	@Email
-	@NotNull
-	@NotEmpty
-	private String userName;
+//	@Email
+//	@NotNull
+//	@NotEmpty
+	private String username;
 	
-	@NotNull
-	@NotEmpty
+//	@NotNull
+//	@NotEmpty
 	private String password;
 	
-	@NotNull
-	@NotEmpty
+//	@NotNull
+//	@NotEmpty
 	private String confirmPassword;
 	
 	public User getUser() {
         return new User();
     }
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {

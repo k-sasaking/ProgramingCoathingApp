@@ -23,11 +23,6 @@ public class AccountController {
         return "account/signin";
     }
     
-    @RequestMapping(value = "/signup", method = RequestMethod.GET)
-    public String signup(Model model) {
-        return "account/signup";
-    }
-    
     @RequestMapping(value = "/password_change", method = RequestMethod.GET)
     public String password_change(Model model) {
         return "account/password_change";
