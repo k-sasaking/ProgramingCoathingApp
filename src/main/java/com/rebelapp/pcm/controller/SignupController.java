@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.rebelapp.pcm.form.SignupForm;
 import com.rebelapp.pcm.service.AccountService;
 
-
 @Controller
 public class SignUpController {
 	
@@ -42,25 +41,20 @@ public class SignUpController {
         BindingResult result
         ) {
 		
-//		if(result.hasErrors()) {
-//	        model.addAttribute("postForm", signupForm);     
-//	       return "account/signup";
-//	    }
-//		
+		if(result.hasErrors()) {
+	        model.addAttribute("signupForm", signupForm);     
+	       return "account/signup";
+	    }
+		
 //        SimpleMailMessage mailMessage = new SimpleMailMessage();
 //        mailMessage.setSubject("Confirm Your Account!");
 //        mailMessage.setFrom("example@");
 //        mailMessage.setText("testestsetesteststeststestesteststs");
 //        mailSender.send(mailMessage);
 
-        // 送信後の処理
-//        model.addAttribute("emailId", signupForm.getUserName());
-//        model.addAttribute("successfulRegisteration");
-//
-//	
-//	   accountService.signupUser(signupForm.getUser());
-//	   return "redirect:/signin?username=" + signupForm.getUserName();
-        return "redirect:/";
+       // 送信後の処理
+	   accountService.signupUser(signupForm.getUser());
+	   return "redirect:/signin?username=" + signupForm.getUsername();
 		
 	}
 	

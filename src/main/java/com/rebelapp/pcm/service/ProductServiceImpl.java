@@ -16,11 +16,10 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    @Override
-    public List<Product> searchProducts(String word) {
-
-        return productRepository.findByTitleLike("%" + word + "%");
-    }
+	@Override
+	public List<Product> getAllProducts() {
+		return productRepository.findAll();
+	}
 
 	@Override
 	public List<Product> getSearchProducts(String word) {
@@ -31,8 +30,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Page<Product> getAllProducts(Pageable pageable) {
-
-		return productRepository.findAll(pageable);
+		return productRepository.findAll(pageable);		 
 	}
 
 	@Override
@@ -42,5 +40,6 @@ public class ProductServiceImpl implements ProductService {
 				return productRepository.findAll(pageable);				
 		return productRepository.findByTitleLike(pageable, "%" + word + "%");
 	}
+
 
 }

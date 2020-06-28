@@ -63,8 +63,11 @@
 				<div class="nav-right">				
 					<ul class="sign-in">
 						<li><i class="fa fa-user"></i></li>
-						<li><a href="/signin">Sign In</a></li>
-						<li><a href="/signup">Sign Up</a></li>
+						
+						<li sec:authorize="!isAuthenticated()" ><a href="/signin">Sign In</a></li>
+						<li sec:authorize="!isAuthenticated()" ><a href="/signup">Sign Up</a></li>
+						<li sec:authorize="isAuthenticated()" ><span sec:authentication="principal.username"></span></li>
+						<li sec:authorize="isAuthenticated()" ><a href="/logout">Sign Out</a></li>
 					</ul><!-- sign-in -->					
 
 					<a href="/post" class="btn">Post Your Product</a>
