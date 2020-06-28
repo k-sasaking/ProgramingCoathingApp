@@ -17,9 +17,9 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Override
-    public List<Product> getAllProducts() {
+    public List<Product> searchProducts(String word) {
 
-        return productRepository.findAll();
+        return productRepository.findByTitleLike("%" + word + "%");
     }
 
 	@Override
