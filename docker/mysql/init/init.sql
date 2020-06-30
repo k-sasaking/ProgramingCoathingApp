@@ -1,7 +1,21 @@
 -- FOREIGN KEY 
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- drop favorite
+DROP TABLE IF EXISTS `favorite`;
+-- drop apply
+DROP TABLE IF EXISTS `apply`;
+-- drop product
+DROP TABLE IF EXISTS `product`;
+-- drop category
+DROP TABLE IF EXISTS `category`;
+-- drop user
+DROP TABLE IF EXISTS `usertoken`;
 -- drop user
 DROP TABLE IF EXISTS `user`;
+
+
+
 -- create user
 create table IF not exists `user` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -15,8 +29,6 @@ create table IF not exists `user` (
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
--- drop product
-DROP TABLE IF EXISTS `product`;
 -- create product
 create table IF not exists `product` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -33,8 +45,6 @@ create table IF not exists `product` (
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
--- drop apply
-DROP TABLE IF EXISTS `apply`;
 -- create apply
 create table IF not exists `apply` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -47,33 +57,32 @@ create table IF not exists `apply` (
     FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE,
     FOREIGN KEY (student_id) REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
--- drop favorite
-DROP TABLE IF EXISTS `favorite`;
 -- create favorite
 create table IF not exists `favorite` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
     `product_id` INT NOT NULL,
     `student_id` INT NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY (`product_id`, `student_id`),
     FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE,
     FOREIGN KEY (student_id) REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
--- drop category
-DROP TABLE IF EXISTS `category`;
 -- create category
 create table IF not exists `category` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `category_name` VARCHAR(30) NOT NULL,
     `category_image` VARCHAR(255)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
---create mailverification
+-- create usertoken
 create table IF not exists `usertoken` (
     `token_id` BIGINT AUTO_INCREMENT PRIMARY KEY,
     `confirmationToken` VARCHAR(255) NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    `username` VARCHAR(30),
-) -- insert data
+    `username` VARCHAR(30)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+
+-- insert data
 INSERT INTO `category` (`id`, `category_name`, `category_image`)
 VALUES (
         '1',
@@ -118,7 +127,8 @@ VALUES (
         '12',
         'Scala',
         'images/logo/programing/scala-logo.png'
-    ) -- insert data
+    );
+    -- insert data
 INSERT INTO `user` (
         `id`,
         `username`,
@@ -206,7 +216,7 @@ VALUES (
         'rebelapp',
         'Hello world!!! ',
         0
-    ) -- insert data
+    ); -- insert data
 INSERT INTO `product` (
         `id`,
         `user_id`,
@@ -818,7 +828,7 @@ VALUES (
         'This is Python Basic lecture',
         3,
         0
-    ) -- insert data
+    ); -- insert data
 INSERT INTO `apply` (
         `id`,
         `product_id`,
@@ -835,10 +845,10 @@ VALUES (1, 1, 6, 0, 'よろしくお願いします。'),
     (7, 3, 6, 0, 'よろしくお願いします。'),
     (8, 4, 6, 0, 'よろしくお願いします。'),
     (9, 5, 6, 0, 'よろしくお願いします。'),
-    (10, 6, 6, 0, 'よろしくお願いします。') -- insert data
+    (10, 6, 6, 0, 'よろしくお願いします。'); -- insert data
 INSERT INTO `favorite` (`product_id`, `student_id`)
 VALUES (2, 6),
     (2, 7),
     (2, 8),
     (2, 9),
-    (2, 10)
+    (2, 10);

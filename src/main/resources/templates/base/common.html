@@ -66,10 +66,9 @@
 						
 						<li sec:authorize="!isAuthenticated()" ><a href="/signin">Sign In</a></li>
 						<li sec:authorize="!isAuthenticated()" ><a href="/signup">Sign Up</a></li>
-						<li sec:authorize="isAuthenticated()" ><span sec:authentication="principal.username"></span></li>
+						<li sec:authorize="isAuthenticated()" ><span id="username" sec:authentication="principal.username"></span></li>
 						<li sec:authorize="isAuthenticated()" ><a href="/logout">Sign Out</a></li>
-					</ul><!-- sign-in -->					
-
+					</ul><!-- sign-in -->
 					<a href="/post" class="btn">Post Your Product</a>
 				</div>
 				<!-- nav-right -->
