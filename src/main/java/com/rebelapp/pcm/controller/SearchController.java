@@ -14,8 +14,10 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+import com.rebelapp.pcm.entity.Apply;
 import com.rebelapp.pcm.entity.Favorite;
 import com.rebelapp.pcm.entity.Product;
+import com.rebelapp.pcm.service.ApplyService;
 import com.rebelapp.pcm.service.FavoriteService;
 import com.rebelapp.pcm.service.ProductService;
 
@@ -29,6 +31,9 @@ public class SearchController {
     @Autowired
     private FavoriteService favoriteService;
 
+    @Autowired
+    private ApplyService applyService;
+    
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public String detail(Model model) {
     	return "search/detail";
@@ -47,16 +52,21 @@ public class SearchController {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         
         List<Integer> favProducts = new ArrayList<Integer>();
+        List<Integer> applyProducts = new ArrayList<Integer>();
     	if(auth.isAuthenticated()) {
             String username = auth.getName();
 	        List<Favorite> favorites = favoriteService.getUserFavorite(username);
 	        if(favorites != null)
 	        	favorites.forEach(x -> favProducts.add(x.getProduct().getId()));
+	        List<Apply> applies = applyService.getUserApplies(username);
+	        if(applies != null)
+	        	applies.forEach(x -> applyProducts.add(x.getProduct().getId()));
     	}
         
     	model.addAttribute("message", "This is sample page");   
     	model.addAttribute("products", products); 
     	model.addAttribute("favProducts", favProducts); 
+    	model.addAttribute("applyProducts", applyProducts); 
        return "index";
     
     }

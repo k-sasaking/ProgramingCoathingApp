@@ -15,7 +15,7 @@ import com.rebelapp.pcm.form.SignupForm;
 import com.rebelapp.pcm.service.AccountService;
 
 @Controller
-public class SignUpController {
+public class SignupController {
 	
 	@Autowired
 	AccountService accountService;

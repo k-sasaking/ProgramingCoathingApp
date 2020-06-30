@@ -52,52 +52,53 @@
 				</div><!-- job-ad-item -->
 				<div class="row">	
 					<div class="col-lg-12">
-						<form action="#">
-							<fieldset>
-								<div class="section postdetails">
-									<h4>Apply Form<span class="pull-right">* Requeire Fields</span></h4>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Title</label>
-										<div class="col-sm-9">
-											<p>Java Basic 1</p>
-										</div>
+						<form th:action="${ '/apply/doApply/' + product.getId() }" method="post">				
+						<fieldset>
+							<div class="section postdetails">
+								<h4>Apply Form<span class="pull-right">* Requeire Fields</span></h4>
+								<div class="row form-group">
+									<label class="col-sm-3 label-title">Title</label>
+									<div class="col-sm-9">
+										<p th:text="${product.getTitle()}">Java Basic 1</p>
 									</div>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Description</label>
-										<div class="col-sm-9">
-											<p>Java Basic 1</p>
-										</div>
+								</div>
+								<div class="row form-group">
+									<label class="col-sm-3 label-title">Description</label>
+									<div class="col-sm-9">
+										<p th:text="${product.getDescription()}">Java Basic 1</p>
 									</div>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Category</label>
-										<div class="col-sm-9">
-											<p>Java</p>
-										</div>
+								</div>
+								<div class="row form-group">
+									<label class="col-sm-3 label-title">Category</label>
+									<div class="col-sm-9">
+										<p th:text="${product.getCategory()}">Java</p>
 									</div>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Price</label>
-										<div class="col-sm-9">
-											<p>3,000円/月</p>
-										</div>
+								</div>
+								<div class="row form-group">
+									<label class="col-sm-3 label-title">Price</label>
+									<div class="col-sm-9">
+										<p th:text="${product.getPrice()}"></p>
 									</div>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Contact tools</label>
-										<div class="col-sm-9">
-											<p>Google Hangout/Slack</p>
-										</div>
+								</div>
+								<div class="row form-group">
+									<label class="col-sm-3 label-title">Contact tools</label>
+									<div class="col-sm-9">
+										<p th:text="${product.getContactTools()}">Google Hangout/Slack</p>
 									</div>
-									<div class="row form-group">
-										<label class="col-sm-3 label-title">Contact Times</label>
-										<div class="col-sm-9">
-											<p>休日/平日夜</p>
-										</div>
+								</div>
+								<div class="row form-group">
+									<label class="col-sm-3 label-title">Contact Times</label>
+									<div class="col-sm-9">
+										<p th:text="${product.getTime()}"></p>
 									</div>
-								</div>			
-								<div class="section">
+								</div>
+							</div>			
+							<div class="section">
 									<div class="row form-group item-description">
 										<label class="col-sm-3 label-title">Message<span class="required">*</span></label>
 										<div class="col-sm-9">
-											<textarea class="form-control" id="textarea" placeholder="Write few lines about your Product" rows="8"></textarea>		
+											<textarea class="form-control" id="textarea" placeholder="Write few lines about your Product" rows="8"
+											name="message" th:text="${message}"></textarea>		
 										</div>
 									</div>
 									<div class="row characters">
@@ -112,17 +113,15 @@
 										</label>
 									</div>
 									<button type="submit" class="btn btn-primary">Post Your Job</button>
-								</div><!-- section -->	
-							</fieldset>
+							</div><!-- section -->	
+						</fieldset>
 						</form><!-- form -->
 					</div>
 				</div><!-- photos-ad -->
 			</div><!-- postdetails -->
 		</div><!-- container -->
 	</section><!-- main -->
-	
     <footer th:replace="base/common :: footer"></footer>
-	
     <div th:replace="base/common :: end_script"></div>
   </body>
 </html>
