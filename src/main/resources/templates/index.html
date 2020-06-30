@@ -168,7 +168,8 @@
 									</div><!-- ad-meta -->									
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="/apply" class="btn btn-primary">Apply Now</a>
+									<a th:unless="${ applyProducts.contains(product.getId()) }" th:href="${'/apply/' + product.getId()}" class="btn btn-primary">Apply Now</a>
+									<a th:if="${ applyProducts.contains(product.getId()) }" class="btn btn-primary" style="background-color: gray;color: white;">Applied</a>
 									<span sec:authorize="isAuthenticated()" class="p-2 btn-fav" th:id="${product.getId()}" >
 									<i th:unless="${ favProducts.contains(product.getId()) }" th:id="${product.getId()}" class="far fa-heart"></i>
 									<i th:if="${ favProducts.contains(product.getId()) }" th:id="${product.getId()}" class="fa fa-heart"></i>

@@ -1,6 +1,7 @@
 package com.rebelapp.pcm.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -39,6 +40,11 @@ public class ProductServiceImpl implements ProductService {
 		if (word == null || word.isEmpty())
 				return productRepository.findAll(pageable);				
 		return productRepository.findByTitleLike(pageable, "%" + word + "%");
+	}
+
+	@Override
+	public Optional<Product> getSingleProduct(Integer id) {
+		return productRepository.findById(id);
 	}
 
 
