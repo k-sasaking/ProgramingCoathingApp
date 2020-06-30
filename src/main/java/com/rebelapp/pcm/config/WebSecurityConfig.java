@@ -42,9 +42,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			.antMatchers("/css/**","/js/**","/images/**").permitAll()
 			.antMatchers("/", "/search", "/signin", "/signup", "/signup-confirm", "/mail").permitAll()
-			.anyRequest().authenticated();
+			.anyRequest().permitAll();
+		http.csrf().disable();
 		
-		http.sessionManagement().invalidSessionUrl("/timeout");
+		//http.sessionManagement().invalidSessionUrl("/timeout");
 			
 
 		// Login Screen
@@ -61,7 +62,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	 */
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		// 初期ユーザーの設定
 		auth.userDetailsService(accountServiceImpl);
 	}
 

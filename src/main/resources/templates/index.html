@@ -169,7 +169,10 @@
 								</div><!-- ad-info -->
 								<div class="button">
 									<a href="/apply" class="btn btn-primary">Apply Now</a>
-									<a href="#"><span class="p-2 btn-fav"><i class="far fa-heart"></i></span></a>
+									<span sec:authorize="isAuthenticated()" class="p-2 btn-fav" th:id="${product.getId()}" >
+									<i th:unless="${ favProducts.contains(product.getId()) }" th:id="${product.getId()}" class="far fa-heart"></i>
+									<i th:if="${ favProducts.contains(product.getId()) }" th:id="${product.getId()}" class="fa fa-heart"></i>
+									</span>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->	
@@ -339,4 +342,5 @@
 	
     <div th:replace="base/common :: end_script"></div>
   </body>
+   <script type="text/javascript" src="/js/ajax.js"></script>
 </html>

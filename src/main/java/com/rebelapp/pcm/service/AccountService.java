@@ -8,8 +8,6 @@ import com.rebelapp.pcm.entity.User;
 public interface AccountService {
 
 	public Optional<User> getUser(String userName);
-
-	public void signinUser(User user);
 	
 	public void signupUser(User user);
 

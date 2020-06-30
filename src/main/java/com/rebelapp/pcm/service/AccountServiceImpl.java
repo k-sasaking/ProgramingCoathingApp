@@ -28,7 +28,7 @@ public class AccountServiceImpl implements AccountService, UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-		Optional<User> user = userRepository.findById(username);
+		Optional<User> user = userRepository.findByUsername(username);
 		if (user.isPresent()) {
 			return new UserDetailsImpl(user.get(), null);
 		} else {
@@ -41,17 +41,12 @@ public class AccountServiceImpl implements AccountService, UserDetailsService {
 
 		return userRepository.findByUsername(userName);
 	}
-
-	@Override
-	public void signinUser(User user) {
-		String encodedPassword = passwordEncoder().encode(user.getPassword());
-		user.setPassword(encodedPassword);
-		userRepository.saveAndFlush(user);
-	}
 	
 	@Override
 	public void signupUser(User user) {
-		
+		String encodedPassword = passwordEncoder().encode(user.getPassword());
+		user.setPassword(encodedPassword);
+		userRepository.saveAndFlush(user);	
 	}
 
 	@Bean

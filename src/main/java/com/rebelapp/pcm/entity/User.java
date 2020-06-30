@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
@@ -13,12 +15,18 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "user")
 public class User {
 	
-	@Id
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+	
 	@Email
 	@Column(name = "username")
 	private String username;
 	
+	@Email
 	@NotBlank
+	@Column(name = "email")
 	private String email;
 	
 	@Column(name = "password")
@@ -39,6 +47,30 @@ public class User {
 	
 	@Column(name = "updated_at")
 	private Date updated_at;
+
+	public User() {
+		
+	}
+	
+	public User(String username, String password) {
+		this.username = username;
+		this.email = username;
+		this.password = password;
+		this.isAdmin = false;
+		this.last_login = new Date();
+		this.created_at = new Date();
+		this.updated_at = new Date();
+	}
+	
+	
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getUsername() {
 		return username;
