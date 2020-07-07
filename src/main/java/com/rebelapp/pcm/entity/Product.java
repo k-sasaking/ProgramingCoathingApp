@@ -7,13 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.rebelapp.pcm.form.ProductForm;
+
+
 @Entity
-@Table(name = "Product")
+@Table(name = "PRODUCT")
 public class Product {
 
     /* Columnの定義 */
@@ -22,9 +25,10 @@ public class Product {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "user_id")
-    
-    private Integer userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @NotNull
+    private User user;
 
     @Column(name = "title")
     private String title;
@@ -59,11 +63,32 @@ public class Product {
      
     @Column(name = "created_at")
     
-    private Date createdAt;   
+    private Date createdAt;
     
     @Column(name = "updated_at")
     
     private Date updatedAt;
+    
+    public Product() {
+    	
+    }
+    
+    public Product(User user) {
+    	this.user = user;
+	}
+    
+    public Product(User user, ProductForm productForm) {
+    	this(user);
+        this.category = productForm.getCategory();
+        this.title = productForm.getTitle();
+    	this.description = productForm.getDescription();
+    	this.price = productForm.getPrice();
+    	this.time = productForm.getTime();
+    	this.ContactTools = productForm.getContactTools();
+        this.isPublished = productForm.isPublished();
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
 
 	public Integer getId() {
 		return id;
@@ -72,13 +97,13 @@ public class Product {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public Integer getUserId() {
-		return userId;
+	
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getTitle() {
@@ -160,5 +185,6 @@ public class Product {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	} 
+	
 
 }

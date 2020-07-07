@@ -7,13 +7,19 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.rebelapp.pcm.entity.Product;
+import com.rebelapp.pcm.form.ProductForm;
 
 public interface ProductService {
 
-    public List<Product> getAllProducts();
-    public List<Product> getSearchProducts(String word);
-    public Page<Product> getAllProducts(Pageable pageable);
-    public Page<Product> getSearchProducts(Pageable pageable, String word);
-	public Optional<Product> getSingleProduct(Integer id);
+    public Optional<Product> getSingleProduct(Integer id);
 
+    public List<Product> getAllProducts();
+
+    public Page<Product> getAllProducts(Pageable pageable);
+
+    public List<Product> getSearchProducts(String word);
+
+    public Page<Product> getSearchProducts(Pageable pageable, String word);
+
+	public void postProduct(Integer userId, ProductForm productForm);
 }

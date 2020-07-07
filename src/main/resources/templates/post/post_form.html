@@ -20,7 +20,12 @@
 			<div class="job-postdetails">
 				<div class="row">	
 					<div class="col-lg-12">
-						<form action="#">
+					<ul>
+				        <li th:each="error : ${#fields.detailedErrors()}">
+				            <span th:text="${error.message}">Error message</span>
+				        </li>
+				    </ul>
+						<form action="/post/add" method="post">
 							<fieldset>
 								<div class="section postdetails">
 									<h4>Post Your Product<span class="pull-right">* Requeire Fields</span></h4>
@@ -39,6 +44,7 @@
 										<label class="col-sm-3 label-title">Title<span class="required">*</span></label>
 										<div class="col-sm-9">
 											<input type="text" class="form-control" placeholder="ex) Java Basic Lesson">
+											
 										</div>
 									</div>
 									<div class="row form-group item-description">
@@ -55,7 +61,7 @@
 									<div class="row form-group">
 										<label class="col-sm-3 label-title">Price<span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control" placeholder="1000  *only number">円/月
+											<input type="text" class="form-control" placeholder="1000  *only number">蜀�/譛�
 										</div>
 									</div>			
 									<div class="row form-group">
@@ -78,7 +84,7 @@
 										<label class="col-sm-3 label-title">Published</label>
 										<div class="checkbox agreement col-sm-9">
 											<label th:for="isPublished">
-												<input type="checkbox" name="isPublished" id="isPublished">公開する
+												<input type="checkbox" name="isPublished" id="isPublished">蜈ｬ髢九☆繧�
 											</label>
 										</div>
 									</div>									
