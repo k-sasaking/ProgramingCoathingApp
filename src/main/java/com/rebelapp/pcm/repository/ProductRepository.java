@@ -13,9 +13,12 @@ import com.rebelapp.pcm.entity.Product;
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     Optional<Product> findById(Integer id);
-    List<Product> findAll();
-    Page<Product> findAll(Pageable pageable); 
-    List<Product> findByTitleLike(String word); 
-    Page<Product> findByTitleLike(Pageable pageable, String word); 
 
+    List<Product> findAll();
+
+    Page<Product> findAll(Pageable pageable);
+
+    List<Product> findByTitleLike(String word);
+
+    Page<Product> findByTitleLike(Pageable pageable, String word);
 }
