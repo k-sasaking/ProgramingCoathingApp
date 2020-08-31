@@ -1,6 +1,5 @@
 -- FOREIGN KEY 
 SET FOREIGN_KEY_CHECKS = 0;
-
 -- drop favorite
 DROP TABLE IF EXISTS `favorite`;
 -- drop apply
@@ -13,9 +12,6 @@ DROP TABLE IF EXISTS `category`;
 DROP TABLE IF EXISTS `usertoken`;
 -- drop user
 DROP TABLE IF EXISTS `user`;
-
-
-
 -- create user
 create table IF not exists `user` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -80,8 +76,6 @@ create table IF not exists `usertoken` (
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `username` VARCHAR(30)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
-
-
 -- insert data
 INSERT INTO `category` (`id`, `category_name`, `category_image`)
 VALUES (
@@ -110,7 +104,11 @@ VALUES (
         'Ruby',
         'images/logo/programing/ruby-logo.png'
     ),
-    ('7', 'PHP', 'images/logo/programing/php-logo.png'),
+    (
+        '7',
+        'PHP',
+        'images/logo/programing/php-logo.png'
+    ),
     (
         '8',
         'Swift',
@@ -128,7 +126,7 @@ VALUES (
         'Scala',
         'images/logo/programing/scala-logo.png'
     );
-    -- insert data
+-- insert data
 INSERT INTO `user` (
         `id`,
         `username`,
@@ -216,7 +214,8 @@ VALUES (
         'rebelapp',
         'Hello world!!! ',
         0
-    ); -- insert data
+    );
+-- insert data
 INSERT INTO `product` (
         `id`,
         `user_id`,
@@ -828,7 +827,8 @@ VALUES (
         'This is Python Basic lecture',
         3,
         0
-    ); -- insert data
+    );
+-- insert data
 INSERT INTO `apply` (
         `id`,
         `product_id`,
@@ -845,7 +845,8 @@ VALUES (1, 1, 6, 0, 'よろしくお願いします。'),
     (7, 3, 6, 0, 'よろしくお願いします。'),
     (8, 4, 6, 0, 'よろしくお願いします。'),
     (9, 5, 6, 0, 'よろしくお願いします。'),
-    (10, 6, 6, 0, 'よろしくお願いします。'); -- insert data
+    (10, 6, 6, 0, 'よろしくお願いします。');
+-- insert data
 INSERT INTO `favorite` (`product_id`, `student_id`)
 VALUES (2, 6),
     (2, 7),
